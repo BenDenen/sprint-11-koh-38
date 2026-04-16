@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 GsonConverterFactory.create(
                     GsonBuilder()
                         .registerTypeAdapter(Date::class.java, CustomDateTypeAdapter())
+                        .registerTypeAdapter(NewsItem::class.java, NewsItemsAdapter())
                         .create()
                 )
             )
@@ -83,6 +84,6 @@ class MainActivity : AppCompatActivity() {
 interface Sprint11ServerApi {
 
 
-    @GET("refs/heads/master/jsons/news_1.json")
+    @GET("refs/heads/master/jsons/news_2.json")
     fun getNews1(): Call<NewsResponse>
 }
